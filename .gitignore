@@ -1,0 +1,22 @@
+# Data: large and regenerable from scripts. Keep only the .gitkeep placeholders.
+data/*/*
+!data/*/.gitkeep
+
+# Trained models can be large
+models/*
+!models/.gitkeep
+
+# Python / Jupyter clutter
+__pycache__/
+.ipynb_checkpoints/
+
+# macOS clutter
+.DS_Store
+
+# QGIS auxiliary files
+*.qgz~
+*.aux.xml
+
+# Secrets: never commit credentials
+.env
+*.json.key
