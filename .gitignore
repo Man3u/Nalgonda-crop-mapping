@@ -20,3 +20,8 @@ __pycache__/
 # Secrets: never commit credentials
 .env
 *.json.key
+
+# Exceptions: small vector data we deliberately keep in the repo
+!data/raw/boundaries/
+!data/processed/*.gpkg
+!data/processed/*.csv
