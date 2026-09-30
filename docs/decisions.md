@@ -22,10 +22,3 @@ Bhuvanagiri. The current Nalgonda boundary (geoBoundaries, representing 2021) me
 
 **Why.** The dashboard deploys from this repository and needs its data; the 2016 source
 repository could disappear; the files are well under GitHub's 100 MB limit.
-## D2: Small vector data is kept in the repository (2026-09-30)
-
-**Decision.** Commit the raw boundary files (about 19 MB) and small processed vector outputs
-(GeoPackage, CSV). Keep satellite imagery and large rasters out of Git; scripts regenerate them.
-
-**Why.** The dashboard deploys from this repository and needs its data; the 2016 source
-repository could disappear; the files are well under GitHub's 100 MB limit.
