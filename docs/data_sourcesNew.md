@@ -1,0 +1,1 @@
+| Nalgonda district boundary (2021) | data/processed/study_area.gpkg, layer nalgonda_district_2021 | geoBoundaries IND ADM2 v6.0.0 via Earth Engine (WM/geoLab/geoBoundaries/600/ADM2); original source Pathways Data / lgdirectory.gov.in | ODbL 1.0 | 2026-09-30 |
