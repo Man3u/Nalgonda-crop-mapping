@@ -16,6 +16,10 @@ Bhuvanagiri. The current Nalgonda boundary (geoBoundaries, representing 2021) me
 - Pre-2016 results allow comparison with older statistics published for the undivided district.
 - The 0.8% mismatch between the two sources (boundary slivers) is documented, not hidden.
 
+## D2: Small vector data is kept in the repository (2026-09-30)
+
+**Decision.** Commit the raw boundary files (about 19 MB) and small processed vector outputs
+(GeoPackage, CSV). Keep satellite imagery and large rasters out of Git; scripts regenerate them.
 
 **Why.** The dashboard deploys from this repository and needs its data; the 2016 source
 repository could disappear; the files are well under GitHub's 100 MB limit.
@@ -31,6 +35,7 @@ repository could disappear; the files are well under GitHub's 100 MB limit.
 ## D4: Sentinel-1 geometry: one relative orbit per pixel, in gamma0
 
 - **Date:** 2026-09-30
+- **Evidence:** In kharif 2025 only descending IW scenes cover the district, from two relative orbits: 165 (west, 71.1% of the district) and 92 (east, 59.1%), which overlap by about 30%. Mixing them in one time series made values zigzag every 5 days, by up to 12 dB at the dam-wall control point.
 - **Decision:** Every pixel's time series comes from a single relative orbit and orbits are never mixed. Backscatter is converted to gamma0 (sigma0 minus 10·log10 cos θ). The orbit number is kept with each sample. Training labels are drawn from both orbit zones, and accuracy is reported for each zone. The choice of orbit inside the overlap is made at the export step.
 - **Check:** At a cropland point seen by both orbits, gamma0 cut the gap between the orbits from 1.9 to 1.1 dB. It did not help for structures (dam wall −8.5 → −7.8 dB; town +2.8 → +3.6 dB), which are not mapped. With only one cropland point this is limited evidence, to be retested on more points.
 - **Consequence:** Prefer features measured relative to each pixel's own series (amplitude, dip depth, rise) over absolute backscatter levels.
