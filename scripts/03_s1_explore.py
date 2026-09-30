@@ -1,8 +1,9 @@
-"""Step 2.5b: Sentinel-1 radar time series for test fields and control points, kharif 2025."""
+"""Step 2.5d: Sentinel-1 time series per field, one relative orbit at a time, kharif 2025."""
+import math
+
 import ee
-import geopandas as gpd
 import pandas as pd
-from config import EE_PROJECT, PROCESSED, INTERIM
+from config import BUFFER_M, EE_PROJECT, FIELDS, INTERIM
 
 ee.Initialize(project=EE_PROJECT)
 
@@ -10,11 +11,11 @@ ee.Initialize(project=EE_PROJECT)
 # Settings
 # ------------------------------------------------------------------
 START, END = "2025-06-01", "2025-12-01"
-PASS = "DESCENDING"          # Step 2.5 showed only descending scenes exist here
-BUFFER_M = 30                # radius (m) of the circle averaged at each point
-RUN_MONTHLY_TABLE = False    # district-wide monthly table from Step 2.5 (slow, already done)
-
-WATER_VH, WATER_VV = -20.0, -16.0   # rule-of-thumb open-water thresholds (dB)
+PASS = "DESCENDING"
+BUFFER_M = 30        # radius (m) of the circle averaged at each point
+DIP_DB = 4.0         # flood dip: VH at least this far below the previous two dates
+RISE_DB = 5.0        # ...followed by a smoothed rise of at least this much
+RISE_DAYS = 90       # ...within this many days
 
 # label: (latitude, longitude), exactly as copied from Google Maps
 FIELDS = {
@@ -22,16 +23,14 @@ FIELDS = {
     "Paddy B": (16.903981848266753, 79.50420212162051),
     "Paddy C": (16.900684783885, 79.49293916943586),
     "Dry": (16.92075352173126, 79.38121341757046),
-    "CONTROL water (Nagarjuna Sagar)": (16.57647824105806, 79.31269505232173),
+    "Dry 2 (Devarakonda)": (16.68857435715174, 78.93937817300532),
+    "CONTROL dam wall": (16.57647824105806, 79.31269505232173),
     "CONTROL town (Nalgonda)": (17.051762780036384, 79.26482294730344),
 }
 
 # ------------------------------------------------------------------
 # Data sources
 # ------------------------------------------------------------------
-aoi_gdf = gpd.read_file(PROCESSED / "study_area.gpkg", layer="nalgonda_district_2016")
-aoi = ee.Geometry(aoi_gdf.geometry.union_all().simplify(0.001).__geo_interface__)
-
 s1 = (
     ee.ImageCollection("COPERNICUS/S1_GRD")
     .filterDate(START, END)
@@ -39,7 +38,6 @@ s1 = (
     .filter(ee.Filter.listContains("transmitterReceiverPolarisation", "VV"))
     .filter(ee.Filter.listContains("transmitterReceiverPolarisation", "VH"))
     .filter(ee.Filter.eq("orbitProperties_pass", PASS))
-    .select(["VV", "VH"])
 )
 
 worldcover = ee.ImageCollection("ESA/WorldCover/v200").first().select("Map")
@@ -57,26 +55,17 @@ def fmt(x, width=6):
 
 
 # ------------------------------------------------------------------
-# Optional: district-wide monthly table (Step 2.5)
+# Earth Engine side
 # ------------------------------------------------------------------
-if RUN_MONTHLY_TABLE:
-    s1_aoi = s1.filterBounds(aoi)
-    print("Sentinel-1 scenes over the district:", s1_aoi.size().getInfo())
-    months = [("Jun", 6), ("Jul", 7), ("Aug", 8), ("Sep", 9), ("Oct", 10), ("Nov", 11)]
-    for name, m in months:
-        start = ee.Date.fromYMD(2025, m, 1)
-        month_col = s1_aoi.filterDate(start, start.advance(1, "month"))
-        views = month_col.select("VH").count().unmask(0).rename("views")
-        stats = views.addBands(month_col.median()).reduceRegion(
-            reducer=ee.Reducer.mean(), geometry=aoi, scale=100, maxPixels=1e9, bestEffort=True
-        ).getInfo()
-        print(f"{name} 2025 | views: {fmt(stats.get('views'), 4)} "
-              f"| VV: {fmt(stats.get('VV'))} dB | VH: {fmt(stats.get('VH'))} dB")
+def to_gamma0(img):
+    """sigma0 -> gamma0 (dB): removes most of the brightness difference caused by viewing angle."""
+    cos_theta = img.select("angle").multiply(math.pi / 180).cos()
+    correction = cos_theta.log10().multiply(10)
+    g0 = img.select(["VV", "VH"]).subtract(correction).rename(["VVg", "VHg"])
+    out = img.select(["VV", "VH"]).addBands(g0)
+    return ee.Image(out.copyProperties(img, ["system:time_start", "relativeOrbitNumber_start"]))
 
 
-# ------------------------------------------------------------------
-# Functions for one field
-# ------------------------------------------------------------------
 def land_check(field):
     """What do two independent global maps say is at this spot?"""
     info = ee.Dictionary({
@@ -87,36 +76,59 @@ def land_check(field):
 
 
 def radar_series(field):
-    """Mean VV and VH inside the field circle, for every Sentinel-1 date."""
+    """Mean sigma0 and gamma0 in the field circle, for every date and orbit."""
     def one_date(img):
         v = img.reduceRegion(ee.Reducer.mean(), field, 10)
         return ee.Feature(None, {
             "date": img.date().format("YYYY-MM-dd"),
-            "VV": v.get("VV"),
-            "VH": v.get("VH"),
+            "orbit": img.get("relativeOrbitNumber_start"),
+            "VV": v.get("VV"), "VH": v.get("VH"),
+            "VVg": v.get("VVg"), "VHg": v.get("VHg"),
         })
 
-    col = s1.filterBounds(field).sort("system:time_start")
+    col = s1.filterBounds(field).map(to_gamma0).sort("system:time_start")
     rows = [f["properties"] for f in col.map(one_date).getInfo()["features"]]
-    df = pd.DataFrame(rows, columns=["date", "VV", "VH"]).dropna()
-    return df.groupby("date", as_index=False).mean()   # merge duplicate scenes on one date
+    df = pd.DataFrame(rows, columns=["date", "orbit", "VV", "VH", "VVg", "VHg"]).dropna()
+    df["orbit"] = df["orbit"].astype(int)
+    return df.groupby(["orbit", "date"], as_index=False).mean()
 
 
-def summarise(df):
-    """Turn a time series into a handful of numbers (hand-made ML features)."""
-    rise = df["VH"].diff()
-    i_rise = rise.idxmax()
-    return {
-        "dates": len(df),
-        "VH_min": df["VH"].min(),
-        "VH_max": df["VH"].max(),
-        "amplitude": df["VH"].max() - df["VH"].min(),
-        "peak_date": df.loc[df["VH"].idxmax(), "date"],
+# ------------------------------------------------------------------
+# Python side: one clean single-orbit series -> smoothed curve + features
+# ------------------------------------------------------------------
+def analyse(track):
+    t = track.sort_values("date").reset_index(drop=True)
+    dates = pd.to_datetime(t["date"])
+
+    # Smoothed curve: the median of each date and its two neighbours kills one-date spikes
+    t["VH_smooth"] = t["VHg"].rolling(3, center=True, min_periods=1).median()
+
+    # Flood dip, on the RAW series: a sudden drop below the previous two dates
+    previous = t["VHg"].shift(1).rolling(2, min_periods=1).median()
+    t["dip"] = t["VHg"] <= previous - DIP_DB
+
+    # Paddy-like: a dip followed by a sustained rise
+    paddy_like = False
+    for i in t.index[t["dip"]]:
+        window = (dates > dates[i]) & (dates <= dates[i] + pd.Timedelta(days=RISE_DAYS))
+        later = t.loc[window, "VH_smooth"]
+        if not later.empty and later.max() - t.loc[i, "VHg"] >= RISE_DB:
+            paddy_like = True
+            break
+
+    rise = t["VH_smooth"].diff()
+    feats = {
+        "dates": len(t),
+        "VH_min": t["VH_smooth"].min(),
+        "VH_max": t["VH_smooth"].max(),
+        "amplitude": t["VH_smooth"].max() - t["VH_smooth"].min(),
+        "peak_date": t.loc[t["VH_smooth"].idxmax(), "date"],
         "biggest_rise": rise.max(),
-        "rise_ends": df.loc[i_rise, "date"],
-        "water_dates": int(df["water"].sum()),
-        "VV_mean": df["VV"].mean(),
+        "rise_ends": t.loc[rise.idxmax(), "date"] if rise.notna().any() else None,
+        "dip_dates": ", ".join(t.loc[t["dip"], "date"].str[5:]) or "-",
+        "paddy_like": paddy_like,
     }
+    return t, feats
 
 
 # ------------------------------------------------------------------
@@ -129,29 +141,43 @@ for label, (lat, lon) in FIELDS.items():
     lc_name, occ = land_check(field)
     df = radar_series(field)
 
-    print(f"\n{label} at {lat:.4f}, {lon:.4f}")
-    print(f"  WorldCover 2021: {lc_name} | water 1984-2021: {fmt(occ, 3)}% of the time")
+    print(f"\n{'=' * 78}\n{label} at {lat:.4f}, {lon:.4f} | WorldCover: {lc_name} | water: {fmt(occ, 3)}%")
     if df.empty:
         print("  no radar data here")
         continue
 
-    df["water"] = (df["VH"] < WATER_VH) & (df["VV"] < WATER_VV)
-    for r in df.itertuples():
-        bar = "#" * max(0, int(r.VH + 30))
-        flag = "  <- water?" if r.water else ""
-        print(f"  {r.date} | VV {r.VV:6.1f} | VH {r.VH:6.1f} {bar}{flag}")
+    for orbit, track in df.groupby("orbit"):
+        t, feats = analyse(track)
+        print(f"  -- orbit {orbit}: {len(t)} dates (gamma0, dB) --")
+        print("  date       | VV g0  | VH g0  | VH smooth")
+        for r in t.itertuples():
+            bar = "#" * max(0, int(r.VHg + 30))
+            flag = "  <- dip" if r.dip else ""
+            print(f"  {r.date} | {r.VVg:6.1f} | {r.VHg:6.1f} | {r.VH_smooth:6.1f} {bar}{flag}")
+        summary.append({"field": label, "orbit": orbit, "worldcover": lc_name, **feats})
+        t.insert(0, "field", label)
+        all_series.append(t)
 
-    summary.append({"field": label, "worldcover": lc_name, "water_%": occ, **summarise(df)})
-    df.insert(0, "field", label)
-    all_series.append(df)
+series = pd.concat(all_series)
 
 # ------------------------------------------------------------------
-# Summary table and CSV
+# Summary table
 # ------------------------------------------------------------------
-pd.set_option("display.width", 220)
-print("\nSUMMARY (VH in dB)")
-print(pd.DataFrame(summary).set_index("field").round(1).to_string())
+pd.set_option("display.width", 250)
+print(f"\n{'=' * 78}\nSUMMARY (features from smoothed gamma0 VH, dB)")
+print(pd.DataFrame(summary).set_index(["field", "orbit"]).round(1).to_string())
+
+# ------------------------------------------------------------------
+# Track offset: same spot, two orbits. Does gamma0 close the gap?
+# ------------------------------------------------------------------
+print("\nTRACK OFFSET for points seen by both orbits (season mean, orbit A minus orbit B)")
+means = series.groupby(["field", "orbit"])[["VH", "VHg"]].mean()
+for name, grp in means.groupby(level="field"):
+    if len(grp) == 2:
+        (a, ra), (b, rb) = [(idx[1], row) for idx, row in grp.iterrows()]
+        print(f"  {name:25s} | sigma0 VH gap: {ra.VH - rb.VH:+5.1f} dB "
+              f"| gamma0 VH gap: {ra.VHg - rb.VHg:+5.1f} dB   (orbit {a} minus {b})")
 
 out = INTERIM / "s1_field_series_kharif2025.csv"
-pd.concat(all_series).to_csv(out, index=False)
+series.to_csv(out, index=False)
 print(f"\nSaved {out.relative_to(INTERIM.parents[1])}")
