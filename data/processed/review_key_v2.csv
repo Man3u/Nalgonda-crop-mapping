@@ -1,0 +1,66 @@
+review_id,point_id,stratum,stratum_size,label,confidence,reason
+R001,P319,review_moved_from_other,20,Review,low,radar dip but optical shows dry soil soon after
+R002,P218,review_other,76,Review,low,radar dip but optical shows dry soil soon after
+R003,P003,paddy_high,59,Paddy,high,radar dip-and-rise + optical flood within 3 weeks
+R004,P006,review_moved_from_other,20,Review,low,radar dip but optical shows dry soil soon after
+R005,P315,paddy_high,59,Paddy,high,radar dip-and-rise + optical flood within 3 weeks
+R006,P300,review_other,76,Review,low,radar dip but optical shows dry soil soon after
+R007,P249,paddy_medium,20,Paddy,medium,optical flood + radar growth afterwards (shallow dip)
+R008,P303,paddy_medium,20,Paddy,medium,optical flood + radar growth afterwards (shallow dip)
+R009,P157,review_other,76,Review,low,green in June but strongly seasonal radar
+R010,P095,other_medium,5,Other kharif crop,medium,"moderate green-up, no flooding"
+R011,P079,other_medium,5,Other kharif crop,medium,"moderate green-up, no flooding"
+R012,P102,paddy_high,59,Paddy,high,radar dip-and-rise + optical flood within 3 weeks
+R013,P156,perennial,35,Perennial,medium,green from June and stable radar all season
+R014,P058,paddy_medium,20,Paddy,medium,optical flood + radar growth afterwards (shallow dip)
+R015,P164,other_medium,5,Other kharif crop,medium,"moderate green-up, no flooding"
+R016,P036,other_high,139,Other kharif crop,high,"clear green-up, no flooding"
+R017,P122,paddy_high,59,Paddy,high,radar dip-and-rise + optical flood within 3 weeks
+R018,P135,paddy_medium,20,Paddy,medium,optical flood + radar growth afterwards (shallow dip)
+R019,P309,perennial,35,Perennial,medium,green from June and stable radar all season
+R020,P292,paddy_high,59,Paddy,high,radar dip-and-rise + optical flood within 3 weeks
+R021,P341,paddy_high,59,Paddy,high,radar dip-and-rise + optical flood within 3 weeks
+R022,P225,review_other,76,Review,low,radar dip but optical shows dry soil soon after
+R023,P286,paddy_high,59,Paddy,high,radar dip-and-rise + optical flood within 3 weeks
+R024,P014,review_moved_from_other,20,Review,low,radar dip but optical shows dry soil soon after
+R025,P099,perennial,35,Perennial,medium,green from June and stable radar all season
+R026,P313,paddy_medium,20,Paddy,medium,optical flood + radar growth afterwards (shallow dip)
+R027,P020,review_other,76,Review,low,radar dip but optical shows dry soil soon after
+R028,P004,review_other,76,Review,low,radar dip but optical shows dry soil soon after
+R029,P181,review_other,76,Review,low,radar dip but optical shows dry soil soon after
+R030,P091,review_moved_from_other,20,Review,low,radar dip-and-rise; optical inconclusive
+R031,P320,other_medium,5,Other kharif crop,medium,"moderate green-up, no flooding"
+R032,P134,perennial,35,Perennial,medium,green from June and stable radar all season
+R033,P237,review_other,76,Review,low,radar dip but optical shows dry soil soon after
+R034,P187,paddy_medium,20,Paddy,medium,optical flood + radar growth afterwards (shallow dip)
+R035,P175,other_high,139,Other kharif crop,high,"clear green-up, no flooding"
+R036,P123,other_high,139,Other kharif crop,high,"clear green-up, no flooding"
+R037,P107,other_high,139,Other kharif crop,high,"clear green-up, no flooding"
+R038,P265,review_moved_from_other,20,Review,low,radar dip but optical shows dry soil soon after
+R039,P317,paddy_medium,20,Paddy,medium,optical flood + radar growth afterwards (shallow dip)
+R040,P111,other_medium,5,Other kharif crop,medium,"moderate green-up, no flooding"
+R041,P214,review_other,76,Review,low,radar dip but optical shows dry soil soon after
+R042,P318,review_moved_from_other,20,Review,low,radar dip-and-rise; optical inconclusive
+R043,P255,perennial,35,Perennial,medium,green from June and stable radar all season
+R044,P132,other_high,139,Other kharif crop,high,"clear green-up, no flooding"
+R045,P072,perennial,35,Perennial,medium,green from June and stable radar all season
+R046,P110,review_moved_from_other,20,Review,low,radar dip but optical shows dry soil soon after
+R047,P055,paddy_high,59,Paddy,high,radar dip-and-rise + optical flood within 3 weeks
+R048,P171,other_high,139,Other kharif crop,high,"clear green-up, no flooding"
+R049,P198,paddy_high,59,Paddy,high,radar dip-and-rise + optical flood within 3 weeks
+R050,P018,review_moved_from_other,20,Review,low,radar dip but optical shows dry soil soon after
+R051,P120,perennial,35,Perennial,medium,green from June and stable radar all season
+R052,P262,perennial,35,Perennial,medium,green from June and stable radar all season
+R053,P299,other_high,139,Other kharif crop,high,"clear green-up, no flooding"
+R054,P296,review_moved_from_other,20,Review,low,radar dip but optical shows dry soil soon after
+R055,P009,paddy_medium,20,Paddy,medium,optical flood + radar growth afterwards (shallow dip)
+R056,P077,other_high,139,Other kharif crop,high,"clear green-up, no flooding"
+R057,P333,paddy_medium,20,Paddy,medium,optical flood + radar growth afterwards (shallow dip)
+R058,P048,review_other,76,Review,low,radar dip but optical shows dry soil soon after
+R059,P160,perennial,35,Perennial,medium,green from June and stable radar all season
+R060,P344,other_high,139,Other kharif crop,high,"clear green-up, no flooding"
+R061,P152,paddy_high,59,Paddy,high,radar dip-and-rise + optical flood within 3 weeks
+R062,P097,perennial,35,Perennial,medium,green from June and stable radar all season
+R063,P216,paddy_medium,20,Paddy,medium,optical flood + radar growth afterwards (shallow dip)
+R064,P323,other_high,139,Other kharif crop,high,"clear green-up, no flooding"
+R065,P165,review_moved_from_other,20,Review,low,radar dip but optical shows dry soil soon after

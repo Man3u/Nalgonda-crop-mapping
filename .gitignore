@@ -25,3 +25,4 @@ __pycache__/
 !data/raw/boundaries/
 !data/processed/*.gpkg
 !data/processed/*.csv
+outputs/review_cards/
