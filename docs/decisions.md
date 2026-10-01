@@ -48,3 +48,10 @@ repository could disappear; the files are well under GitHub's 100 MB limit.
 - **Why:** No field survey is possible. Two independent physical signals (radar surface scattering, optical water absorption in the SWIR) are unlikely to agree by chance.
 - **Definition and limitation:** "Paddy" means flooded, transplanted rice. Direct-seeded rice without a flooded phase cannot be separated from other crops with these data and falls under "other kharif crop".
 - **Sampling:** Candidate points are kept away from field edges and boundaries, to avoid mixed pixels (see the dam-wall control).
+
+## D6: Class scheme: Paddy / Other kharif crop / Fallow, inside cropland only
+
+- **Date:** 2026-09-30
+- **Decision:** Mapping is restricted to ESA WorldCover 2021 cropland (class 40), shrunk by 30 m to avoid field and land-cover edges. Inside it, three classes: **Paddy** (flooded, transplanted rice; D5 two-sensor evidence), **Other kharif crop** (clear green-up without flooding, NDVI peak >= 0.40), **Fallow** (no real green-up, NDVI peak < 0.40). Water, built-up and forest are masked out, not classified.
+- **Why:** Every class must be verifiable from the satellite evidence we have. Cotton, maize and red gram cannot yet be told apart reliably, so they are grouped; unsupervised clustering will test whether the data supports splitting them.
+- **Known risks:** WorldCover is from 2021, so some cropland may have changed since. Orchards (e.g. citrus) sit inside "cropland" but are green from June; the rules send them to Review instead of guessing.
