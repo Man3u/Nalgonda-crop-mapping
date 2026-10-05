@@ -1,0 +1,80 @@
+point_id,orbit,lon,lat,label,reason,model,model_prob
+P208,165,78.977409412757,17.06776581944988,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.98
+P051,165,79.08278179558422,16.99365480851002,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.98
+P242,165,79.22103251781022,17.16451437554955,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.96
+P168,165,78.89359659674865,17.006051559430865,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.95
+P029,165,78.97713991817176,17.504347047531965,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.95
+P263,92,79.66974100222791,17.3264806212763,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.95
+P221,165,79.39674298738399,17.20439957416446,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.95
+P322,165,79.46869804164197,17.435625928296822,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.94
+P053,165,78.98145183153554,16.96562737164549,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.94
+P071,165,79.06418666920294,17.247518707802193,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.94
+P117,165,79.00381988211011,16.799888201725437,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.94
+P230,165,78.99869948499064,16.927898129712467,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.92
+P339,165,79.11134822161922,17.402208599727576,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.92
+P096,165,78.95692782427908,16.740329898388314,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.92
+P089,92,79.6080267422089,16.786413472463643,Review,radar dip but optical shows dry soil soon after,Paddy,0.92
+P026,165,78.98872818533691,17.49949614499772,Review,radar dip but optical shows dry soil soon after,Paddy,0.91
+P050,165,78.97902638026842,16.99688874353285,Review,radar dip-and-rise; optical inconclusive,Other kharif crop,0.91
+P210,165,79.1337162721938,17.056986036040445,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.9
+P272,165,79.33934064072875,16.623099753810717,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.9
+P125,92,79.85865670647826,16.876694158517655,Review,optical flood without radar growth afterwards,Paddy,0.89
+P220,165,79.47300995500574,17.2017046283121,Review,radar dip-and-rise; optical inconclusive,Other kharif crop,0.89
+P250,92,79.68887511777966,16.806625566356335,Review,radar dip but optical shows dry soil soon after,Paddy,0.88
+P106,165,79.20567132645176,17.55932394292008,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.87
+P085,92,79.48486771675611,16.709607515671426,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.82
+P213,92,79.8379056234151,17.15993296760054,Review,optical flood without radar growth afterwards,Paddy,0.79
+P337,165,78.977409412757,17.342650296390453,Review,optical flood without radar growth afterwards,Paddy,0.73
+P011,165,79.27493143485738,16.807164555526803,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.72
+P016,165,79.14126212058041,17.535069430248853,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.72
+P010,165,79.315625117228,16.77239975403138,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.71
+P236,165,78.89898648845336,17.08851690251304,Review,optical flood without radar growth afterwards,Other kharif crop,0.71
+P246,165,79.2803213265621,17.281475025541912,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.71
+P268,165,79.07011555007813,16.738173941706425,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.71
+P264,92,79.76244713954905,17.362592895697905,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.7
+P017,165,79.07119352841907,17.470390729792246,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.69
+P169,92,79.91336410728113,16.729550114978878,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.69
+P258,165,79.31104370927899,16.91496238962115,Review,radar dip but optical shows dry soil soon after,Paddy,0.68
+P131,165,79.53472421502475,17.33052304005484,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.67
+P150,165,79.48190327631852,17.138373400781674,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.66
+P161,165,78.8248754775135,17.63666888888277,Review,radar dip but optical shows dry soil soon after,Paddy,0.66
+P021,92,79.72795183263887,17.29333278729229,Review,optical flood without radar growth afterwards,Paddy,0.65
+P226,165,79.3088877525971,17.025724664153085,Other kharif crop,"clear green-up, no flooding",Perennial,0.64
+P353,165,79.05798829374253,17.549083148681117,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.64
+P075,92,79.66003919715942,17.10980697474667,Review,optical flood without radar growth afterwards,Paddy,0.64
+P279,92,79.77807782549273,17.04755372555719,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.63
+P121,92,79.79047457641357,16.841659862436995,Review,optical flood without radar growth afterwards,Paddy,0.62
+P086,92,79.5832332403672,16.788569429145532,Review,radar dip but optical shows dry soil soon after,Paddy,0.61
+P119,165,79.11592962956823,16.859985494233033,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.61
+P173,92,79.85326681477353,16.74652827384874,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.59
+P184,92,79.60667926928272,16.819561306447653,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.59
+P343,92,79.54307854716706,16.94218134272997,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.58
+P101,92,79.75058937779868,16.956734050332706,Review,optical flood without radar growth afterwards,Paddy,0.58
+P278,92,79.79613396270354,17.030845061272565,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.57
+P349,165,78.90356789640238,17.589507336466497,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.57
+P247,92,79.72444840303079,16.7424858550702,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.57
+P090,92,79.64279154370433,16.80042719089591,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.56
+P032,165,78.74241013443134,17.501652101679607,Review,radar dip but optical shows dry soil soon after,Perennial,0.56
+P321,165,79.42450092966328,17.481170513201683,Other kharif crop,"clear green-up, no flooding",Perennial,0.55
+P174,92,79.80556627318678,16.738173941706425,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.55
+P253,165,79.37491392597988,16.800157696310674,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.54
+P034,165,78.80196843776845,17.507850477140032,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.54
+P231,165,79.02564894351421,16.89933170367747,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.54
+P180,92,79.94570345750944,16.815518887669118,Review,radar dip-and-rise; optical inconclusive,Paddy,0.53
+P346,92,79.54604298760465,16.987456433049594,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.52
+P028,165,78.86152674110558,17.566330802136214,Other kharif crop,"clear green-up, no flooding",Perennial,0.52
+P217,165,79.40536681411155,17.20224361748257,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.52
+P196,165,79.37033251803088,17.44020733624583,Review,optical flood without radar growth afterwards,Other kharif crop,0.52
+P282,92,79.70073287953004,16.991229357242894,Review,optical flood without radar growth afterwards,Paddy,0.52
+P202,92,79.80017638148207,17.033001017954454,Review,radar dip but optical shows dry soil soon after,Paddy,0.5
+P195,165,79.3622476804738,17.473624664815077,Review,radar dip but optical shows dry soil soon after,Other kharif crop,0.5
+P155,92,79.92845580405434,16.979371595492516,Review,optical flood without radar growth afterwards,Paddy,0.49
+P182,92,79.55412782516173,16.84192935702223,Review,optical flood without radar growth afterwards,Paddy,0.48
+P331,165,79.56194316813357,17.446944700876728,Review,radar dip but optical shows dry soil soon after,Paddy,0.48
+P073,92,79.71609407088849,17.157777010918654,Review,optical flood without radar growth afterwards,Paddy,0.48
+P205,165,79.12832638048909,17.02788062083497,Review,radar dip but optical shows dry soil soon after,Paddy,0.47
+P088,92,79.61206916098745,16.769435313593785,Review,optical flood without radar growth afterwards,Paddy,0.43
+P074,92,79.64467800580098,17.20035715538592,Review,optical flood without radar growth afterwards,Perennial,0.41
+P310,92,79.64386952204528,17.086091451245917,Review,radar dip but optical shows dry soil soon after,Paddy,0.41
+P308,92,79.53688017170664,17.18203152358988,Review,optical flood without radar growth afterwards,Other kharif crop,0.38
+P336,92,79.62985580361301,17.3588199715046,Review,radar dip-and-rise; optical inconclusive,Paddy,0.37

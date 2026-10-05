@@ -1,11 +1,18 @@
-name: base
+name: cropmap
 channels:
   - conda-forge
 dependencies:
-  - python=3.14
-  - conda[version='>=26.7.2']
-  - mamba[version='>=2.9.0']
-  - pip
-  - gh
+  - rioxarray
+  - shap
+  - xarray
+  - jupyterlab
+  - python=3.12
+  - osmnx
   - matplotlib
-prefix: /Users/manu/miniforge3
+  - xgboost
+  - scikit-learn
+  - earthengine-api
+  - rasterio
+  - gdal
+  - geopandas
+prefix: /Users/manu/miniforge3/envs/cropmap
