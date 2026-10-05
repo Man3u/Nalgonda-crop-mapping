@@ -1,0 +1,66 @@
+review_id,point_id,stratum,stratum_size,label,confidence,reason,review_label,review_confidence,review_notes,rule_label,weight
+R001,P319,review_moved_from_other,20,Review,low,radar dip but optical shows dry soil soon after,Paddy,medium,"CARD ONLY: own 2-bin dip Jul, flood hidden by cloud, wet canopy, harvest Nov",Review,2.0
+R002,P218,review_other,76,Review,low,radar dip but optical shows dry soil soon after,Other kharif crop,low,"CARD ONLY: zigzag radar (mixed spot?), peak .61, LSWI <= .2",Review,7.6
+R003,P003,paddy_high,59,Paddy,high,radar dip-and-rise + optical flood within 3 weeks,Paddy,high,"CARD ONLY: LSWI > NDVI early Aug, low radar Jul-Aug, NDVI .86, LSWI .39",Paddy,5.9
+R004,P006,review_moved_from_other,20,Review,low,radar dip but optical shows dry soil soon after,Other kharif crop,medium,"CARD ONLY: short crop, peak .68 mid-Aug, LSWI low",Review,2.0
+R005,P315,paddy_high,59,Paddy,high,radar dip-and-rise + optical flood within 3 weeks,Paddy,high,"CARD ONLY: own deep dips Jul-Aug, LSWI > NDVI twice, NDVI .82",Paddy,5.9
+R006,P300,review_other,76,Review,low,radar dip but optical shows dry soil soon after,Paddy,medium,"img paddy land near stream; own dip late Jul, +10 dB, wet canopy",Review,7.6
+R007,P249,paddy_medium,20,Paddy,medium,optical flood + radar growth afterwards (shallow dip),Paddy,high,"img paddy land; dip Aug 3 bins, LSWI > NDVI early Aug",Paddy,2.0
+R008,P303,paddy_medium,20,Paddy,medium,optical flood + radar growth afterwards (shallow dip),Paddy,high,"img paddy land; own dip mid-Jul to Aug, LSWI >= NDVI",Paddy,2.0
+R009,P157,review_other,76,Review,low,green in June but strongly seasonal radar,Can't tell,low,"img mixed; jumpy radar, weak crop cycle",Review,7.6
+R010,P095,other_medium,5,Other kharif crop,medium,"moderate green-up, no flooding",Other kharif crop,low,"img bare land; follows neighbours, NDVI about .5, LSWI low",Other kharif crop,1.0
+R011,P079,other_medium,5,Other kharif crop,medium,"moderate green-up, no flooding",Not cropland,high,"img sheds; jumpy radar, no crop cycle",Other kharif crop,1.0
+R012,P102,paddy_high,59,Paddy,high,radar dip-and-rise + optical flood within 3 weeks,Paddy,high,"img paddy land (brown photo); own dip -26 early Aug, LSWI = NDVI",Paddy,5.9
+R013,P156,perennial,35,Perennial,medium,green from June and stable radar all season,Paddy,high,img paddy land; LSWI .38 vs NDVI .18 early Aug; dip shared (canal belt),Perennial,3.5
+R014,P058,paddy_medium,20,Paddy,medium,optical flood + radar growth afterwards (shallow dip),Paddy,high,"img paddy land; LSWI > NDVI early Aug, wet canopy",Paddy,2.0
+R015,P164,other_medium,5,Other kharif crop,medium,"moderate green-up, no flooding",Not cropland,high,img real-estate layout; no crop cycle,Other kharif crop,1.0
+R016,P036,other_high,139,Other kharif crop,high,"clear green-up, no flooding",Other kharif crop,low,"img mixed; follows neighbours, slow green-up, LSWI low",Other kharif crop,13.9
+R017,P122,paddy_high,59,Paddy,high,radar dip-and-rise + optical flood within 3 weeks,Paddy,high,"img paddy land; own dip late Jul, LSWI > NDVI early Aug",Paddy,5.9
+R018,P135,paddy_medium,20,Paddy,medium,optical flood + radar growth afterwards (shallow dip),Paddy,high,"img paddy land; own dip Aug 3 bins, LSWI > NDVI",Paddy,2.0
+R019,P309,perennial,35,Perennial,medium,green from June and stable radar all season,Perennial,medium,"img orchard; green in June, no flood",Perennial,3.5
+R020,P292,paddy_high,59,Paddy,high,radar dip-and-rise + optical flood within 3 weeks,Paddy,high,"img paddy land; own dip to -24, LSWI > NDVI early Aug",Paddy,5.9
+R021,P341,paddy_high,59,Paddy,high,radar dip-and-rise + optical flood within 3 weeks,Paddy,high,"img paddy land; own dip -25 late Jul, LSWI > NDVI",Paddy,5.9
+R022,P225,review_other,76,Review,low,radar dip but optical shows dry soil soon after,Other kharif crop,low,"img mixed; follows neighbours, LSWI <= .29",Review,7.6
+R023,P286,paddy_high,59,Paddy,high,radar dip-and-rise + optical flood within 3 weeks,Paddy,high,img paddy land; own dip -31 dB (open water),Paddy,5.9
+R024,P014,review_moved_from_other,20,Review,low,radar dip but optical shows dry soil soon after,Other kharif crop,high,"img dryland; no flood, bright radar, green late Nov",Review,2.0
+R025,P099,perennial,35,Perennial,medium,green from June and stable radar all season,Perennial,high,"img orchard; green all season, stable radar",Perennial,3.5
+R026,P313,paddy_medium,20,Paddy,medium,optical flood + radar growth afterwards (shallow dip),Paddy,high,"img paddy land; LSWI > NDVI early Jul, early harvest mid-Oct",Paddy,2.0
+R027,P020,review_other,76,Review,low,radar dip but optical shows dry soil soon after,Other kharif crop,low,"CONFLICT img paddy land; card no flood, LSWI <= .27",Review,7.6
+R028,P004,review_other,76,Review,low,radar dip but optical shows dry soil soon after,Perennial,medium,"img orchard; green from Jul, flat to Nov",Review,7.6
+R029,P181,review_other,76,Review,low,radar dip but optical shows dry soil soon after,Paddy,high,"img paddy land; own dip late Aug-early Sep, 2 bins",Review,7.6
+R030,P091,review_moved_from_other,20,Review,low,radar dip-and-rise; optical inconclusive,Other kharif crop,high,"img dryland; NDVI about .5, no flood",Review,2.0
+R031,P320,other_medium,5,Other kharif crop,medium,"moderate green-up, no flooding",Not cropland,high,"img real-estate layout; jumpy radar, flat NDVI",Other kharif crop,1.0
+R032,P134,perennial,35,Perennial,medium,green from June and stable radar all season,Perennial,high,"img orchard; NDVI .50 in June, green all season",Perennial,3.5
+R033,P237,review_other,76,Review,low,radar dip but optical shows dry soil soon after,Other kharif crop,medium,"CONFLICT img paddy land (cloudy); card LSWI <= .14, rain-fed",Review,7.6
+R034,P187,paddy_medium,20,Paddy,medium,optical flood + radar growth afterwards (shallow dip),Paddy,low,"img paddy land; odd calendar, flood signal mid-Aug, green-up only Oct",Paddy,2.0
+R035,P175,other_high,139,Other kharif crop,high,"clear green-up, no flooding",Other kharif crop,low,"img mixed; no dip when neighbours dip, late green-up",Other kharif crop,13.9
+R036,P123,other_high,139,Other kharif crop,high,"clear green-up, no flooding",Paddy,medium,"img paddy land; dip shared (canal belt), LSWI .47 mid-Sep",Other kharif crop,13.9
+R037,P107,other_high,139,Other kharif crop,high,"clear green-up, no flooding",Other kharif crop,low,"CONFLICT img paddy land; card no flood, green late Nov",Other kharif crop,13.9
+R038,P265,review_moved_from_other,20,Review,low,radar dip but optical shows dry soil soon after,Paddy,high,"img paddy land; own dip early Aug 3 bins, wet canopy",Review,2.0
+R039,P317,paddy_medium,20,Paddy,medium,optical flood + radar growth afterwards (shallow dip),Paddy,high,"img paddy land; flooded Jun, harvest Oct, re-flooded Nov (rabi)",Paddy,2.0
+R040,P111,other_medium,5,Other kharif crop,medium,"moderate green-up, no flooding",Other kharif crop,medium,"img dryland; short weak crop, gone by Oct",Other kharif crop,1.0
+R041,P214,review_other,76,Review,low,radar dip but optical shows dry soil soon after,Paddy,high,"img paddy land; own dip Aug-Sep 3 bins, NDVI .85",Review,7.6
+R042,P318,review_moved_from_other,20,Review,low,radar dip-and-rise; optical inconclusive,Paddy,medium,"img paddy land; field cleared mid-Jul, wet canopy, no clear flood",Review,2.0
+R043,P255,perennial,35,Perennial,medium,green from June and stable radar all season,Perennial,high,"img orchard; NDVI .70 in June, green all season",Perennial,3.5
+R044,P132,other_high,139,Other kharif crop,high,"clear green-up, no flooding",Paddy,medium,"img paddy land; own dip early Aug, LSWI only about .25",Other kharif crop,13.9
+R045,P072,perennial,35,Perennial,medium,green from June and stable radar all season,Perennial,low,"CONFLICT img dryland; card green all season, no flood",Perennial,3.5
+R046,P110,review_moved_from_other,20,Review,low,radar dip but optical shows dry soil soon after,Other kharif crop,low,"img dryland; one own radar dip, no flood seen, green late Nov",Review,2.0
+R047,P055,paddy_high,59,Paddy,high,radar dip-and-rise + optical flood within 3 weeks,Paddy,high,"img paddy land; own dip 3 bins, LSWI = NDVI early Aug",Paddy,5.9
+R048,P171,other_high,139,Other kharif crop,high,"clear green-up, no flooding",Other kharif crop,high,"img dryland; no flood, late green-up, green late Nov",Other kharif crop,13.9
+R049,P198,paddy_high,59,Paddy,high,radar dip-and-rise + optical flood within 3 weeks,Paddy,high,"img paddy land; own dip -28.7 (water), LSWI >= NDVI",Paddy,5.9
+R050,P018,review_moved_from_other,20,Review,low,radar dip but optical shows dry soil soon after,Other kharif crop,high,"img dryland; follows neighbours, no flood",Review,2.0
+R051,P120,perennial,35,Perennial,medium,green from June and stable radar all season,Perennial,low,"CONFLICT img dryland; card green all season, stable radar",Perennial,3.5
+R052,P262,perennial,35,Perennial,medium,green from June and stable radar all season,Other kharif crop,low,"CONFLICT img paddy land; card no flood, LSWI <= .25",Perennial,3.5
+R053,P299,other_high,139,Other kharif crop,high,"clear green-up, no flooding",Paddy,high,"img paddy land; wet Jun-Jul, harvest mid-Oct, re-flooded late Nov",Other kharif crop,13.9
+R054,P296,review_moved_from_other,20,Review,low,radar dip but optical shows dry soil soon after,Paddy,medium,"img paddy land; own dips Aug-Sep, wet canopy, no direct flood",Review,2.0
+R055,P009,paddy_medium,20,Paddy,medium,optical flood + radar growth afterwards (shallow dip),Paddy,high,"img paddy land; LSWI = NDVI early Aug, own dip Aug-Sep",Paddy,2.0
+R056,P077,other_high,139,Other kharif crop,high,"clear green-up, no flooding",Other kharif crop,medium,"CARD ONLY (imagery not recorded): no flood, LSWI <= .15",Other kharif crop,13.9
+R057,P333,paddy_medium,20,Paddy,medium,optical flood + radar growth afterwards (shallow dip),Paddy,medium,"img mixed; own dip Aug 2 bins, LSWI >= NDVI late Jul-mid Aug",Paddy,2.0
+R058,P048,review_other,76,Review,low,radar dip but optical shows dry soil soon after,Other kharif crop,low,"CONFLICT img paddy land; card no flood, green late Nov",Review,7.6
+R059,P160,perennial,35,Perennial,medium,green from June and stable radar all season,Perennial,low,"CONFLICT img dryland; card green all season, stable radar",Perennial,3.5
+R060,P344,other_high,139,Other kharif crop,high,"clear green-up, no flooding",Other kharif crop,high,"img dryland; follows neighbours, LSWI <= .27",Other kharif crop,13.9
+R061,P152,paddy_high,59,Paddy,high,radar dip-and-rise + optical flood within 3 weeks,Paddy,medium,"img mixed; LSWI >= NDVI mid-Jul and early Aug, own dip",Paddy,5.9
+R062,P097,perennial,35,Perennial,medium,green from June and stable radar all season,Paddy,medium,"img paddy land; paddy timing, wet canopy, no clear flood",Perennial,3.5
+R063,P216,paddy_medium,20,Paddy,medium,optical flood + radar growth afterwards (shallow dip),Paddy,low,CONFLICT img dryland; card strong paddy (LSWI >= NDVI Aug),Paddy,2.0
+R064,P323,other_high,139,Other kharif crop,high,"clear green-up, no flooding",Other kharif crop,low,"CONFLICT img paddy land; card no flood, two NDVI peaks",Other kharif crop,13.9
+R065,P165,review_moved_from_other,20,Review,low,radar dip but optical shows dry soil soon after,Paddy,low,"CONFLICT img dryland; own dips Aug-Sep, wet canopy, no direct flood",Review,2.0
