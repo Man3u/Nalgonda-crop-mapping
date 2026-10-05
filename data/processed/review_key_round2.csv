@@ -1,0 +1,26 @@
+review_id,point_id,stratum,stratum_size,label,model,p_paddy
+S001,P188,unsure_other,129,Other kharif crop,Other kharif crop,0.2
+S002,P129,control_low,120,Other kharif crop,Other kharif crop,0.18
+S003,P241,unsure_other,129,Other kharif crop,Other kharif crop,0.43
+S004,P258,review_to_paddy,24,Review,Paddy,0.68
+S005,P118,unsure_other,129,Other kharif crop,Other kharif crop,0.18
+S006,P130,unsure_other,129,Other kharif crop,Other kharif crop,0.19
+S007,P201,unsure_other,129,Other kharif crop,Other kharif crop,0.17
+S008,P283,unsure_other,129,Other kharif crop,Other kharif crop,0.42
+S009,P021,review_to_paddy,24,Review,Paddy,0.65
+S010,P109,unsure_other,129,Other kharif crop,Other kharif crop,0.26
+S011,P328,unsure_other,129,Other kharif crop,Other kharif crop,0.34
+S012,P129,unsure_other,129,Other kharif crop,Other kharif crop,0.18
+S013,P116,control_low,120,Other kharif crop,Other kharif crop,0.02
+S014,P149,unsure_other,129,Other kharif crop,Other kharif crop,0.32
+S015,P298,unsure_other,129,Other kharif crop,Other kharif crop,0.3
+S016,P121,review_to_paddy,24,Review,Paddy,0.62
+S017,P015,control_low,120,Other kharif crop,Other kharif crop,0.05
+S018,P213,review_to_paddy,24,Review,Paddy,0.79
+S019,P162,control_low,120,Other kharif crop,Other kharif crop,0.12
+S020,P161,review_to_paddy,24,Review,Paddy,0.66
+S021,P103,unsure_other,129,Other kharif crop,Other kharif crop,0.22
+S022,P170,unsure_other,129,Other kharif crop,Other kharif crop,0.19
+S023,P285,unsure_other,129,Other kharif crop,Other kharif crop,0.17
+S024,P066,control_low,120,Other kharif crop,Other kharif crop,0.02
+S025,P288,unsure_other,129,Other kharif crop,Other kharif crop,0.26

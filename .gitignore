@@ -26,3 +26,4 @@ __pycache__/
 !data/processed/*.gpkg
 !data/processed/*.csv
 outputs/review_cards/
+outputs/review_cards_round2/
